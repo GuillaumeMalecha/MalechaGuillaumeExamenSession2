@@ -3,6 +3,7 @@
 {% block title %}Informations du livre {{ livre.id }}{% endblock %}
 
 {% block body %}
+<div class="container">
 
     <h4>Titre : {{ livre.titre }}</h4>
     <h5>Artiste : {{ livre.auteur }}</h5>
@@ -12,8 +13,12 @@
     <h5>Genre : {{ livre.genre.nom }}</h5>
     <br>
 
-    <a href="{{ path('modifierlivre', {id: livre.id}) }}"><button type="button" class="btn btn-info">Modifier le livre</button></a>
-    <a href="{{ path('supprimerlivre', {id: livre.id}) }}"><button type="button" class="btn btn-danger">Supprimer le livre</button></a>
-
-{% endblock %}
+    <a href="{{ path('modifierlivre', {id: livre.id}) }}">
+        <button type="button" class="btn btn-info">Modifier le livre</button>
+    </a>
+    <a href="{{ path('supprimerlivre', {id: livre.id}) }}">
+        <button type="button" class="btn btn-danger">Supprimer le livre</button>
+    </a>
+</div>
+    {% endblock %}
 

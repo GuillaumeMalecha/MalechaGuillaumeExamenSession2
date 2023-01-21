@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les livres{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <h2>Tous les livres</h2>
+    <ul>
+    {% for livre in livres %}
+        <i class="fas fa-bookmark"></i>
+        <h4>Titre : <a href="{{ path ("detaillivre", {id:livre.id}) }}"><button type="button" class="btn btn-primary">{{ livre.titre }}</button></a></h4>
+        <h5>Auteur : {{ livre.auteur }}</h5>
+        <br>
+
+    {% endfor %}
+    </ul>
+</div>
+
+    {% endblock %}

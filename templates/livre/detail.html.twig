@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations du livre {{ livre.id }}{% endblock %}
+
+{% block body %}
+
+    <h4>Titre : {{ livre.titre }}</h4>
+    <h5>Artiste : {{ livre.auteur }}</h5>
+    <h5>Résumé : {{ livre.resume }}</h5>
+    <p>Date d'ajout : {{ livre.dateAjout|date("d/m/Y") }}</p>
+    <p>Date de parution : {{ livre.dateParution|date("d/m/Y") }}</p>
+    <br>
+
+    <a href="{{ path('modifierlivre', {id: livre.id}) }}"><button type="button" class="btn btn-info">Modifier le livre</button></a>
+    <a href="{{ path('supprimerlivre', {id: livre.id}) }}"><button type="button" class="btn btn-danger">Supprimer le livre</button></a>
+
+{% endblock %}
+
